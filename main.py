@@ -1,3 +1,4 @@
+# Chloe Miller
 def encode(password):
     password = password
     encoded_password = ''
@@ -8,9 +9,9 @@ def encode(password):
         elif digit == 7:
             digit = 0
         elif digit == 8:
-            digit == 1
+            digit = 1
         elif digit == 9:
-            digit == 2
+            digit = 2
         encoded_password = encoded_password + str(digit)
     return encoded_password
 
