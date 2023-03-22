@@ -15,6 +15,23 @@ def encode(password):
         encoded_password = encoded_password + str(digit)
     return encoded_password
 
+def decode(password):
+    old_pass = ''
+    for digit in password:
+        digit = int(digit)
+        if digit > 3:
+            digit -= 3
+        elif digit == 0:
+            digit = 7
+        elif digit == 1:
+            digit = 8
+        elif digit == 2:
+            digit = 9
+        old_pass += str(digit)
+    return old_pass
+
+
+
 
 def menu():
     print("Menu")
@@ -35,7 +52,8 @@ def main():
             encoded_password = encode(password)
             print("Your password has been encoded and stored!")
         if menu_option == "2":
-            pass
+            decoded_password = decode(encoded_password)
+            print(f' The encoded password is {encoded_password}, and the original password is {decoded_password}.')
 
 if __name__ == "__main__":
     main()
